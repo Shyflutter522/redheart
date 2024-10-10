@@ -13,7 +13,7 @@
             height: 100vh;
             background-image: url('nurse.gif'); /* Asegúrate de que la imagen esté en el mismo directorio */
             background-size: cover;
-            overflow: hidden; /* Evita el desplazamiento de la página */
+            overflow: hidden;
         }
         canvas {
             position: absolute;
@@ -32,20 +32,18 @@
         canvas.height = window.innerHeight;
 
         // Función para dibujar un corazón
-        function drawHeart(x, y, size) {
+        function drawHeart() {
             ctx.fillStyle = 'red'; // Color rojo
             ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.bezierCurveTo(x, y - size / 2, x - size / 2, y - size / 2, x - size / 2, y); // Curva izquierda
-            ctx.bezierCurveTo(x - size / 2, y + size / 2, x, y + size / 2, x, y); // Curva derecha
-            ctx.bezierCurveTo(x, y + size / 2, x + size / 2, y + size / 2, x + size / 2, y); // Curva inferior
-            ctx.bezierCurveTo(x + size / 2, y - size / 2, x, y - size / 2, x, y); // Cierre
+            ctx.moveTo(400, 300);
+            ctx.bezierCurveTo(400, 200, 300, 200, 300, 300); // Curva izquierda
+            ctx.bezierCurveTo(300, 400, 400, 400, 400, 300); // Curva derecha
+            ctx.bezierCurveTo(400, 400, 500, 400, 500, 300); // Curva inferior
+            ctx.bezierCurveTo(500, 200, 400, 200, 400, 300); // Cierre
             ctx.fill();
         }
 
-        // Dibuja el corazón en el centro del canvas
-        drawHeart(canvas.width / 2, canvas.height / 2, 200);
-
+        drawHeart();
     </script>
 </body>
 </html>
