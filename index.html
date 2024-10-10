@@ -4,14 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Red Heart</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('nurse.gif'); /* Asegúrate de que la imagen esté en el mismo directorio */
+            background-size: cover;
+        }
+        canvas {
+            position: absolute;
+            z-index: 1; /* Asegúrate de que el canvas esté encima de la imagen */
+        }
+    </style>
 </head>
 <body>
-    <h1>Proyecto Red Heart</h1>
-    <p>Este proyecto dibuja un corazón utilizando Python y la biblioteca Turtle.</p>
-    <h2>Archivos:</h2>
-    <ul>
-        <li><a href="redheart.py">Código del corazón (Python)</a></li>
-        <li><a href="nurse.gif">Imagen de fondo</a></li>
-    </ul>
+    <canvas id="heartCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('heartCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Ajustar el tamaño del canvas
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Función para dibujar un corazón
+        function drawHeart() {
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)'; // Color rojo con algo de transparencia
+            ctx.beginPath();
+            ctx.moveTo(400, 300);
+            ctx.bezierCurveTo(400, 200, 300, 200, 300, 300);
+            ctx.bezierCurveTo(300, 400, 400, 400, 400, 300);
+            ctx.bezierCurveTo(400, 400, 500, 400, 500, 300);
+            ctx.bezierCurveTo(500, 200, 400, 200, 400, 300);
+            ctx.fill();
+        }
+
+        drawHeart();
+    </script>
 </body>
 </html>
