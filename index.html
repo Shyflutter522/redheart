@@ -14,7 +14,8 @@
             background-color: black; /* Fondo negro */
         }
         canvas {
-            border: 1px solid white; /* Borde para ver el canvas */
+            border: none; /* Sin borde */
+            background-color: transparent; /* Fondo transparente */
         }
     </style>
 </head>
@@ -26,7 +27,7 @@
 
         // Ajustar el tamaño del canvas
         canvas.width = 800; // Ancho del canvas
-        canvas.height = 600; // Alto del canvas
+        canvas.height = 700; // Aumentar la altura del canvas
 
         // Variables para la animación
         const heartSize = 20; // Tamaño del corazón
@@ -42,7 +43,7 @@
             // Dibuja el corazón
             for (let i = 0; i < t; i += increment) {
                 const x = 400 + heartSize * 16 * Math.pow(Math.sin(i), 3);
-                const y = 300 - heartSize * (13 * Math.cos(i) - 5 * Math.cos(2 * i) - 2 * Math.cos(3 * i) - Math.cos(4 * i));
+                const y = 350 - heartSize * (13 * Math.cos(i) - 5 * Math.cos(2 * i) - 2 * Math.cos(3 * i) - Math.cos(4 * i)); // Ajusta la posición vertical
 
                 if (i === 0) {
                     ctx.moveTo(x, y); // Mover a la primera posición
