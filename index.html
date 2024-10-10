@@ -35,10 +35,10 @@
             ctx.fillStyle = 'rgba(255, 0, 0, 0.5)'; // Color rojo con algo de transparencia
             ctx.beginPath();
             ctx.moveTo(400, 300);
-            ctx.bezierCurveTo(400, 200, 300, 200, 300, 300);
-            ctx.bezierCurveTo(300, 400, 400, 400, 400, 300);
-            ctx.bezierCurveTo(400, 400, 500, 400, 500, 300);
-            ctx.bezierCurveTo(500, 200, 400, 200, 400, 300);
+            ctx.bezierCurveTo(400, 200, 300, 200, 300, 300); // Curva izquierda
+            ctx.bezierCurveTo(300, 400, 400, 400, 400, 300); // Curva derecha
+            ctx.bezierCurveTo(400, 400, 500, 400, 500, 300); // Curva inferior
+            ctx.bezierCurveTo(500, 200, 400, 200, 400, 300); // Cierre
             ctx.fill();
         }
 
